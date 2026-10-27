@@ -53,6 +53,8 @@
 
             /* 文字置中 */
             text-align: center;
+            /* 避免觸控操作觸發瀏覽器預設手勢 */
+            touch-action: none;
             /* 文字樣式 */
             color: white;
             font-size: 80px;
@@ -92,8 +94,9 @@
      catCount.id = "p";
  };
 
-  document.addEventListener('click',updateCount);
-  document.addEventListener('click',closeMouth); 
+    catCount.addEventListener('pointerdown', updateCount);
+    catCount.addEventListener('pointerup', closeMouth);
+    catCount.addEventListener('pointerleave', closeMouth);
 
 
 </script>
