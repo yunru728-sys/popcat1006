@@ -74,8 +74,29 @@
 <body>
 <div class="container">
     <img class="title" src="imgs/popcat.svg" alt="POPCAT">
-    <div class="cat-img" id="p">0728yunyun</div>
+    <div class="cat-img" id="p">0</div>
 </div>
+
+<script>
+ let count = 0;
+ const catCount=document.getElementById("p");
+ catCount.innerText = count;
+
+ const updateCount = () => {
+     count++;
+     catCount.innerText = count;
+     catCount.id = "op" ;
+ };
+
+ const closeMouth = () => {
+     catCount.id = "p";
+ };
+
+  document.addEventListener('click',updateCount);
+  document.addEventListener('click',closeMouth); 
+
+
+</script>
 
 </body>
 </html>
